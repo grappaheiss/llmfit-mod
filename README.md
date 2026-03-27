@@ -18,13 +18,22 @@ Past that point the same registry feeds search, routing, evaluation, and orchest
 
 This should end up as Rust inside `llmfit`. Right now it is a Python sidecar because that was the fastest path to a working extension.
 
-## Canonical Entry
+## Files
 
-Use `llmfit-model-adder.py`.
+```text
+llmfit-mod/
+├── llmfit-model-adder.py
+├── llmfit-integrate.sh
+├── examples/
+│   ├── sample-custom-models.json
+│   ├── sample-hf-models-before.json
+│   └── sample-hf-models-after.json
+└── README.md
+```
 
-`llmfit-model-adder_v2.py` is not part of the public path.
+Use `llmfit-model-adder.py`. The `_v2` wrapper is not part of the public path.
 
-## What It Does
+## Behavior
 
 - expands one Hugging Face repo into one or more quantized llmfit entries
 - replaces stale entries for the same model family on repeated runs
@@ -129,7 +138,7 @@ The merge target is `llmfit-core/data/hf_models.json`.
 
 If `data/hf_models.json` also exists in the checkout, the script mirrors the merged output there.
 
-## CLI Contract
+## CLI
 
 ```bash
 # Add all discovered quantizations
@@ -156,7 +165,7 @@ Default custom database:
 
 Override it with `--db` on the Python CLI or `LLMFIT_CUSTOM_DB` / `--db` on the integration script.
 
-## TUI Misses
+## TUI
 
 If the model shows up in `./target/release/llmfit search ...` but not in plain `llmfit`, the installed binary is stale.
 
