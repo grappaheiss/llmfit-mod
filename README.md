@@ -2,6 +2,8 @@
 
 `llmfit-mod` is an extension to [`llmfit`](https://github.com/AlexsJones/llmfit), a strong starting place for working with local AI and finding the best fit for your machine and workflow.
 
+If your model registry is inconsistent, your AI system is already non-deterministic.
+
 `llmfit` already provides both a CLI and a TUI, which makes it a solid base package for model discovery and fit analysis. `llmfit-mod` extends that existing stack by adding a practical path for bringing customized Hugging Face GGUF models into the `llmfit` CLI and TUI without hand-editing the underlying model database.
 
 In practice, this project expands the existing `hf_models.json` workflow so you can stage, merge, rebuild, and activate custom model entries on top of the current `llmfit` experience.
@@ -9,6 +11,16 @@ In practice, this project expands the existing `hf_models.json` workflow so you 
 For AI enthusiasts working with local models, this is a high-leverage extension.
 
 Longer term, this workflow should be converted into a direct Rust implementation inside `llmfit` itself. For now, this is the down-and-dirty extension layer that gets the job done.
+
+This repo is part of a larger AI Engineering course focused on building deterministic systems.
+Full system architecture link coming soon.
+
+## Why This Matters
+
+- Manual model config management breaks fast once you move beyond one-off local experiments.
+- Inconsistent metadata creates silent drift between what the registry says and what the runtime actually loads.
+- Non-normalized model names and quant labels make repeated imports non-deterministic.
+- If the registry is unstable, search, routing, evaluation, and downstream automation all inherit bad state.
 
 ## Canonical Entry
 
@@ -22,6 +34,16 @@ Use `llmfit-model-adder.py` as the public CLI entrypoint.
 - replaces stale entries for the same model family on repeated runs
 - merges the staged entries into `llmfit-core/data/hf_models.json`
 - lets you rebuild and activate `llmfit` so the compiled binary can search those new models
+
+## Where This Fits
+
+```text
+Hugging Face repo -> ingestion -> normalized registry -> runtime
+```
+
+This repo handles the normalization and registry-consistency part of that flow.
+
+In a larger system, this expands into model routing, evaluation, and orchestration.
 
 ## Public Repo Boundary
 
