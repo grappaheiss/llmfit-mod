@@ -1,0 +1,38 @@
+[
+  {
+    "name": "01-ai/Yi-1.5-9B-Chat",
+    "provider": "01.ai",
+    "parameter_count": "8.8B",
+    "parameters_raw": 8829407232,
+    "min_ram_gb": 4.9,
+    "recommended_ram_gb": 8.2,
+    "min_vram_gb": 4.5,
+    "quantization": "Q4_K_M",
+    "context_length": 4096,
+    "use_case": "Instruction following, chat",
+    "capabilities": [],
+    "pipeline_tag": "text-generation",
+    "architecture": "llama",
+    "hf_downloads": 19975,
+    "hf_likes": 148,
+    "release_date": "2024-05-10"
+  },
+  {
+    "name": "bartowski/Llama-3.1-8B-Instruct-Q4_0",
+    "provider": "Bartowski",
+    "parameter_count": "8B",
+    "parameters_raw": 8000000000,
+    "min_ram_gb": 4.5,
+    "recommended_ram_gb": 7.5,
+    "min_vram_gb": 4.1,
+    "quantization": "Q4_0",
+    "context_length": 8192,
+    "use_case": "Instruction following, chat",
+    "capabilities": [],
+    "pipeline_tag": "text-generation",
+    "architecture": "llama",
+    "hf_downloads": 0,
+    "hf_likes": 0,
+    "release_date": null
+  }
+]

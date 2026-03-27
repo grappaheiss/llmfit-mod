@@ -1,0 +1,7 @@
+__pycache__/
+.pytest_cache/
+.cache/
+llmfit-source/.git/
+llmfit-source/target/
+llmfit-source/scripts/__pycache__/
+*.pyc
