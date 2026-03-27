@@ -1,8 +1,8 @@
+![llmfit-mod landing](assets/landing-wave.jpg)
+
 # llmfit-mod
 
 `llmfit-mod` extends [`llmfit`](https://github.com/AlexsJones/llmfit).
-
-![llmfit-mod flow](assets/hero.svg)
 
 `llmfit` already has the useful part: a CLI and TUI over a normalized model registry. This repo patches the missing path for custom models. It stages external Hugging Face GGUF repos, normalizes them into llmfit-style entries, and merges them into the registry that `llmfit` compiles into the binary.
 
@@ -13,6 +13,8 @@ System boundary:
 ```text
 Hugging Face repo -> ingestion -> normalized registry -> runtime
 ```
+
+![llmfit-mod avatar](assets/hero.svg)
 
 This repo handles the normalization and registry part.
 
@@ -29,6 +31,7 @@ Course:
 ```text
 llmfit-mod/
 ├── assets/
+│   ├── landing-wave.jpg
 │   └── hero.svg
 ├── llmfit-model-adder.py
 ├── llmfit-integrate.sh
