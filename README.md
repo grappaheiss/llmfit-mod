@@ -2,6 +2,8 @@
 
 `llmfit-mod` extends [`llmfit`](https://github.com/AlexsJones/llmfit).
 
+![llmfit-mod flow](assets/hero.svg)
+
 `llmfit` already has the useful part: a CLI and TUI over a normalized model registry. This repo patches the missing path for custom models. It stages external Hugging Face GGUF repos, normalizes them into llmfit-style entries, and merges them into the registry that `llmfit` compiles into the binary.
 
 Without this, custom model handling turns into manual JSON edits, inconsistent naming, and duplicate registry state.
@@ -18,10 +20,16 @@ Past that point the same registry feeds search, routing, evaluation, and orchest
 
 This should end up as Rust inside `llmfit`. Right now it is a Python sidecar because that was the fastest path to a working extension.
 
+Course:
+
+- AI Engineering 2026: https://www.udemy.com/course/ai-engineering-2026-chatgpt-rag-agentic-systems/?referralCode=0CD7DB8A1D87430DE6F6
+
 ## Files
 
 ```text
 llmfit-mod/
+├── assets/
+│   └── hero.svg
 ├── llmfit-model-adder.py
 ├── llmfit-integrate.sh
 ├── examples/
