@@ -1,8 +1,14 @@
 # llmfit-mod
 
-Import custom Hugging Face GGUF repos, normalize them into llmfit-style metadata, and merge them into an `llmfit` checkout without manual JSON edits.
+`llmfit-mod` is an extension to [`llmfit`](https://github.com/AlexsJones/llmfit), a strong starting place for working with local AI and finding the best fit for your machine and workflow.
 
-This repository is a small public proof/workflow repo, not a full replacement for upstream `llmfit`.
+`llmfit` already provides both a CLI and a TUI, which makes it a solid base package for model discovery and fit analysis. `llmfit-mod` extends that existing stack by adding a practical path for bringing customized Hugging Face GGUF models into the `llmfit` CLI and TUI without hand-editing the underlying model database.
+
+In practice, this project expands the existing `hf_models.json` workflow so you can stage, merge, rebuild, and activate custom model entries on top of the current `llmfit` experience.
+
+For AI enthusiasts working with local models, this is a high-leverage extension.
+
+Longer term, this workflow should be converted into a direct Rust implementation inside `llmfit` itself. For now, this is the down-and-dirty extension layer that gets the job done.
 
 ## Canonical Entry
 
